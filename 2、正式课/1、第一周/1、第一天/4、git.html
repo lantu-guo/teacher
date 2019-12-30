@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        1、git的全局配置
+            git config -l(git config --list):查看git的全局配置
+            git config --global user.name 'xxx':配置全局的用户名
+            git config --global user.email 'xxx@xxx'：配置全局的邮箱
+        2、创建本地仓库，完成版本控制
+            git init :初始化本地仓库
+            git add . ：把全部修改的文件提交到暂存区
+            git add -A：把全部修改的文件提交到暂存区
+            git add 文件名 ：把指定修改的文件提交到暂存区
+
+            git commit -m'注释'：把暂存区的文件提交到历史区
+            git reset --hard 七位历史版本号：回滚指定历史版本的代码到本地
+
+            git status:查看文件提交状态
+            git log:查看历史版本信息
+            git reflog:查看所有的历史版本信息
+
+        3、把本地的代码提交到远程仓库
+        
+            git remote -v:查看本地仓库和远程仓库的连接状态
+            git remote add origin :  远程仓库项目地址
+            git remote rm origin : 解除本地和远程仓库的关联
+
+            git pull origin master:把远程仓库的代码拉取到本地
+            git push origin master:把本地的代码推送到远程仓库
+
+            git clone 远程仓库项目地址 本地的项目名：把远程的项目仓库克隆到本地(git init  git remote add   git pull   )
+
+        */
+    </script>
+</body>
+</html>

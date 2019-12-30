@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style> 
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            width: 500px;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+        li {
+            line-height: 30px;
+            font-size: 20px;
+            text-align: center;
+            color:white;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul id="box">
+        <li>1</li>  
+        <li>2</li>  
+        <li>3</li>  
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        let list = document.querySelectorAll('#box li');
+        for (var i = 0; i < list.length; i++) {
+           if(i%2 === 0){
+            list[i].style.background = 'red';
+           }
+           else {
+            list[i].style.background = 'black'; 
+           }
+           list[i].myColor = list[i].style.background;
+           list[i].myIndex = i+1;
+           list[i].onmouseover = function(){
+               this.style.background = 'pink';
+           };
+           list[i].onmouseout = function(){
+              this.style.background = this.myColor;
+           };
+           list[i].onclick = function(){
+            alert(`我是第${this.myIndex}个li`);
+           }
+        }
+        
+    </script>
+</body>
+</html>

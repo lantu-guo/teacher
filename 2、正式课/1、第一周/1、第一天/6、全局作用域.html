@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        作用域：全局作用域、私有作用域
+
+        全局作用域：当你打开一个页面的时候，就会形成一个全局的作用域，(为代码执行提供环境,保存变量和值)，而且当全局作用域生成的时候，也生成了一个全局的大对象window,
+        window的上的方法在使用的时候可以省略window.
+        当你关闭这个页面的时候，当前的全局作用域就销毁了
+        */
+    //    let a = 12;
+    //    console.log(a);
+    //    console.log(window)
+    //    console.log(Number)
+    //    console.log(window.Number)
+
+       /* 
+       全局变量：
+       在全局作用域下定义的变量就是全局变量
+
+       */
+    //   let a = 12;
+    //   var b = 13;
+    //   function fn(){};
+
+    // var、function和let、const的区别
+        /* 
+        1、var和function在全局作用域下创建的变量会给window增加键值对，属性名是变量名，属性值是变量名所代表的的值，let和const不会；
+
+        2、var和function创建的变量可以重复创建(声明)，但是let和const不可以，const创建变量的时候必须赋值
+
+        3、var和function存在变量提升，但是let和const没有
+
+        */
+        // var a = 12;
+        // let b = 13;
+        // function fn(){};
+        // const c = 11;
+        // console.log(window.a); // 12
+        // console.log(window.fn); // f
+        // console.log(window.b); // undefined
+        // console.log(window.c); // undefined
+
+        // var a = 12;
+        // var a = 13;
+        // function fn(){
+        //     console.log(1)
+        // };
+        // function fn(){
+        //     console.log(2)
+        // }
+        // console.log(a)
+        // console.log(fn)
+        // let a = 12;
+        // let a = 13; // 报错 Identifier 'a' has already been declared
+            // const a // const创建常量，他代表的值不能被修改
+
+
+            function fn(){
+                let a = 12;
+                return a
+            }
+            
+            let a = fn()
+                console.log(a)
+
+    // 变量提升  全局作用域  私有作用域 
+
+    </script>
+</body>
+</html>
