@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        箭头函数: ES6的语法
+        展开收缩运算符：ES6的语法
+        函数的形参赋默认值：ES6的语法
+        */
+
+// 一、箭头函数
+// 把下列普通函数转化为箭头函数
+        // function sum(n,m){
+        //     let total = n+m;
+        //     return total
+        // }
+
+        // let sum = function(n,m){
+        //     let total = n+m;
+        //     return total
+        // }
+
+        // let sum = (n,m)=>{
+        //     let total = n+m;
+        //     return total
+        // }
+        // console.log(sum(10,12)) // 22
+
+// 1、 如果函数只有一个形参，可以省略小括号
+        // function fn(n){};
+        // let fn=(n)=>{}
+        // let fn = n =>{};
+
+// 2、如果函数大括号里只有return一行代码，可以省略大括号和return
+        // function fn(n){
+        //     return n
+        // }
+        // let fn = (n)=>{
+        //     return n
+        // }
+        // let fn = n => n
+
+// 3、如果函数return的是一个空对象，那简写的时候要给空对象加小括号
+        // function fn() {
+        //     return {}
+        // }
+        // let fn = () => {
+        //     return {}
+        // }
+        // let fn = () =>({})
+
+// 4、箭头函数没有arguments
+        // let fn = ()=>{
+        //     console.log(arguments) // 报错
+        // }
+        // fn();
+
+// 5、箭头函数没有this
+
+
+// 二、展开/收缩运算符...
+        // let fn = (...arg)=>{ // 收缩运算符
+        //     console.log(arg);
+        //     console.log(...arg); // 展开运算符
+        // }
+        // fn(1,2,3,4,5,6);
+
+// 课下用箭头函数的方式实现任意数求和
+
+        // let ary = [1,2,3,4,5];
+        // let ary1 = [...ary];  // 克隆数组clone
+        // console.log(ary1); // [1,2,3,4,5]
+        // console.log(ary == ary1); // false 因为是两个不同的空间地址
+
+
+// 三、给函数的形参赋默认值
+        // function fn(n = 0, m = 0) {
+        //     // 如果函数执行的时候不传实参，那形参的值就是你赋的默认值，如果传实参，那形参的值就是你传递的实参值
+        //     console.log(n, m);
+        //     return n + m;
+        // }
+        // console.log(fn(10, 12));
+
+// 把下列函数改写为箭头函数
+    // 如果涉及函数嵌套问题，就从里往外一层一层改写
+        // function fn(s){
+        //     return function(x){console.log(1)}
+        // }
+
+        // function fn(s){
+        //     return (x)=>{console.log(1)}
+        // }
+
+        // let fn = (s)=>{
+        //     return (x)=>{console.log(1)}
+        // }
+
+        // let fn = s => x =>{console.log(1)}
+        
+        // let f = fn()
+        // f()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        基本数据类型之字符串string
+        1、只要拿单引号、双引号、反引号包裹起来的都是字符串 ''  "" ``
+        2、把其他数据类型转换为字符串
+            1、val.toString()
+        */
+    // 1、val.toString()
+        // 1、把number和boolean转字符串：直接加引号
+            // console.log((12).toString()); // '12'
+            // console.log((1).toString()); // '1'
+            // console.log(true.toString()); // 'true'
+            // console.log(false.toString()); // 'false'
+        // 2、null和undefined不能调用toString方法，会报错
+            // console.log(null.toString()); // 报错
+            // console.log(undefined.toString()) // 报错
+            // 如果你非想给他俩转换为字符串，就使用字符串拼接
+            // console.log(null+'')
+            // console.log(undefined+'')
+
+        // 3、引用数据类型转字符串
+            // 1、普通对象转字符串： '[object Object]'
+            // console.log(({}).toString())
+            // 2、数组转字符串：那数组的每一项都去调用toString，最后把所有的结果依次和逗号拼接起来
+            // 3、空数组转字符串是空字符串
+            // console.log([].toString())// ''
+            // console.log([23,34].toString()) // '23,34'
+
+
+        // 四则运算
+            // 在js也可以进行正常的四则运算
+            // 如果运算的时候如果运算的值不是数字类型的，他会默认转换为数字类型，在进行计算
+            // 只要在运算的过程中出现NaN了，那最后的结果就是NaN
+
+            // console.log(true + true) // 2
+            // console.log(true + false + null + undefined) //1+0+0+NaN
+            // console.log(true*6/2*(parseInt('ss'))) // NaN
+            // console.log([]-0) // 0
+            // console.log({}-0) // NaN
+            // console.log(3.1415926*3785/966-{}) // NaN
+
+        // 在加法运算中有两种情况(字符串拼接只有可能在加法中出现)
+            // 1、正常的运算
+            // 2、如果在运算过程中字符串和加号相遇了，那就不再是正常运算，也不会进行数据类型转换，就成了字符串拼接了
+
+            // console.log('1' + true) // '1true'
+            // console.log('1' - true) // 1-1->0
+
+        // 如果在拼接的过程中出现引用数据类型了，那照样要进行数据类型转换
+            // console.log(true + '1' + false) // 'true1false'
+            // console.log(1 + {}) // 1 + '[object Object]' ->'1[object Object]'
+            // console.log('1'+ []) // '1' + ''->'1'
+            // console.log('1'+true) // '1true'
+            // console.log([]+{})// ''+{} ->''+'[object Object]'->'[object Object]'
+            // console.log({}+{}) // '[object Object]'+{}->'[object Object]'+'[object Object]' ->[object Object][object Object]'
+
+            // let a = 10 + null + true + [] + '珠峰' + [] + {} + false;
+            // console.log(a);
+            /* 
+            10+true + [] + '珠峰' + [] + {} + false;
+            11+[] + '珠峰' + [] + {} + false;
+            '11'+'珠峰' + [] + {} + false;
+            '11珠峰'+[] + {} + false;
+            '11珠峰'+ {} + false;
+            '11珠峰[object Object]' + false
+            '11珠峰[object Object]false'
+            */
+
+            // let b = 1 + null + true + undefined + '珠峰' + {} + null;
+            // console.log(b);
+            /* 
+            1+1->2->2+NaN->NaN->NaN+'珠峰'->'NaN珠峰'+'[object Object]'->'NaN珠峰[object Object]'->'NaN珠峰[object Object]'+null->'NaN珠峰[object Object]null'
+            */
+            //    let c = 1 + isNaN(null) + undefined + '珠峰' + {} + parseInt('13px');
+            //    console.log(c)
+            // 1+false->1+NaN->NaN+'珠峰'->'NaN珠峰'+'[object Object]'->'NaN珠峰[object Object]'+ 13->'NaN珠峰[object Object]13'
+
+            //    let d = 1 + 'isNaN(null)'; // '1isNaN(null)'
+            //    console.log(d)
+
+            // console.log(true+0)
+            // console.log(false*1)
+    </script>
+</body>
+
+</html>

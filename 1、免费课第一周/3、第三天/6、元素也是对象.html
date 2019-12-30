@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: 20px auto;
+        }
+
+        .ss {
+            /* background: black; */
+            color: aquamarine;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="boxss" style="color: yellow;">1111</div>
+    <script>
+
+        let box = document.getElementById('box');
+        console.dir(box) // 在控制台详细输出一个对象(元素也是对象数据类型的)
+        // 在你们学css、html的时候叫标签，在js里叫dom元素
+        /* 
+        获取页面中的dom元素：
+        get:获取
+        element：元素
+        by：通过
+        id：id名
+        */
+
+
+        /* 
+        元素对象里的4个属性名：
+        className：元素的class名
+        style : 元素的行内样式
+        innerHTML: 元素的内容(可以识别标签)
+        innerText: 元素的内容(不可以识别标签)
+        */
+
+        // console.log(box.className) // 获取元素的class名
+        // box.className = 'ss'; // 设置元素的class名
+        // console.log(box.style) // 获取元素的所有行内样式
+        // box.style.backgroundColor = 'orange' // 动态设置style样式
+
+
+        // console.log(box.innerHTML) // 获取元素的内容
+        // console.log(box.innerText) // 获取元素的内容
+        // box.innerHTML = '12345678';// 设置元素的内容
+        // box.innerText = 'sssss'// 设置元素的内容
+
+        // box.innerHTML = '<span class="w" style="color:green">哈哈</span>'
+        // box.innerText = '<span class="w" style="color:red">哈哈</span>'
+        // innerHTML设置内容的时候是可以识别字符串里的标签的，但是innerText不会
+    </script>
+</body>
+
+</html>

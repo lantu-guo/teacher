@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" style="background: red;"></div>
+    <script>
+        // 1、想操作谁就获取谁
+        let box = document.getElementById('box');
+        // 获取当前元素
+        // console.dir(box)
+
+        // 给当前元素绑定点击事件
+        box.onclick = function(){
+            // 每点击一次当前元素，函数里的代码就会重新执行一次
+            let color = box.style.background;
+            
+            if(color === 'red'){
+                // 如果当前元素的颜色是红色，就改为黄色
+                box.style.background = 'yellow'
+            }else if(color === 'yellow'){
+                // 如果当前元素的颜色是黄色，就改为绿色
+                box.style.background = 'green'
+            }else {
+                // 如果以上都不成立，就把当前元素的颜色改为红色
+                box.style.background = 'red'
+            }
+        }
+        // red->green->yellow->orange->black->red->.....
+        // 用switch case去改写
+    </script>
+</body>
+
+</html>

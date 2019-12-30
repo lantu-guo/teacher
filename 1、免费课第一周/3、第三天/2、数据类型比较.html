@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+       = :赋值
+       ==：比较，返回值是一个布尔类型的值(也会进行数据类型转换)
+       !=:不等，也会进行数据类型转换
+       ===:绝对比较：不会进行数据类型的转换
+       !==:绝对不等：不会进行数据类型的转换
+
+       不同数据类型之间的比较：会进行隐式数据类型转换
+
+        数字 == 字符串：把左右两边转数字，在进行比较
+        数字 == 布尔：把左右两边转数字，在进行比较
+        字符串 == 布尔：把左右两边转数字，在进行比较
+        对象 == 对象: 比较的是空间地址
+        对象 == 数字：把左右两边转数字，在进行比较
+        对象 == 布尔：把左右两边转数字，在进行比较
+        对象 == 字符串：把左右两边转字符串，在进行比较
+        // 字符串比较的是ASCII码
+
+        null == null // true
+        undefined == undefined // true
+        null == undefined // true
+        除此之外null和undefined和谁都不相等
+        NaN和谁都不相等(包括自己)
+       */
+        //   ({}) == ({}) // false
+        //   let m = {};
+        //   let n = m;
+        //   console.log(m == n) // true
+        //  console.log(1 == 2)  //false
+        //  console.log(1 == 1) // true
+
+        // console.log('1' == 1) // true
+        // console.log(1 == true) // true
+        // console.log(0 == false) // true
+        // console.log('' == false) // true
+        // console.log(({}) == NaN) // false
+        // console.log(({}) == true) // false
+        // console.log(({}) == '[object Object]')
+
+        // console.log(!isNaN(NaN) == !!isNaN(NaN)) // false
+        //            false          true
+        // console.log(null == undefined) // true
+        // console.log(null == false) // false
+        // console.log(undefined == false) // false
+
+        // 字符串比较的是ASCII码
+        // console.log('1' == '1') // true
+        // console.log(29 > 16) // true
+        // console.log('11' > '7') // false
+        // console.log('a' < 'b') // true
+        // console.log('a' == 'b') // false
+        // console.log('a' == 'a') // true
+        // console.log(NaN != NaN) // true
+        // console.log(0 != false) // false
+        // console.log('1' === 1) // false
+        // console.log(1 === 1) // true
+        // console.log(1 !== 1) // false
+        // console.log(null != 0) // true
+    </script>
+</body>
+
+</html>

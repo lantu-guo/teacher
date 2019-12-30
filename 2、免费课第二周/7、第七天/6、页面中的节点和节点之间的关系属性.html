@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul id="box">
+            <li id="one">1</li>
+            <li id="two">2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <script>
+        /* 
+        页面中的节点：页面是由节点组成的
+        dom元素只是节点的一种，全名叫做元素节点，
+        所有的节点都是对象数据类型的
+
+        节点名称                      nodeType  nodeName      nodeValue
+        元素节点：标签                    1      大写的标签名       null
+        文本节点：内容、空格、回车(换行)    3        '#text'        内容
+        注释节点：注释                    8         '#comment'     内容
+        文档节点：document                9        '#document'      null
+        */
+        
+        /* 
+        节点之间的关系属性：
+        1、childNodes:获取所有的子节点
+        2、children：获取所有的元素子节点(在IE6~IE8不兼容)
+        3、firstChild：第一个子节点
+        4、lastChild: 最后一个子节点
+        5、firstElementChild：第一个元素子节点(在IE6~IE8不兼容)
+        6、lastElementChild：最后一个元素子节点(在IE6~IE8不兼容)
+        7、previousSibling：上一个哥哥节点
+        8、nextSibling：下一个兄弟节点
+        9、previousElementSibling：上一个哥哥元素节点(在IE6~IE8不兼容)
+        10、nextElementSibling：下一个兄弟元素节点(在IE6~IE8不兼容)
+        11、parentNode：父亲节点(div->body->html->document->null)
+        
+        如果是获取单个的节点获取不到就是null
+        */
+       let box = document.getElementById('box');
+       let two = document.getElementById('two');
+       let one = document.getElementById('one');
+    //    console.log(box.childNodes)
+    // console.log(box.childNodes) 
+    // console.log(box.children)
+    // console.log(box.firstChild)
+    // console.log(box.lastChild)
+    // console.log(box.firstElementChild)
+    // console.log(two.previousSibling)
+    // console.log(two.nextSibling)
+    // console.log(two.previousElementSibling)
+    // console.log(two.nextElementSibling)
+    // console.log(two.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode)
+    // div->body->html->document->null
+    console.log(one.previousElementSibling)
+
+        
+    </script>
+</body>
+</html>

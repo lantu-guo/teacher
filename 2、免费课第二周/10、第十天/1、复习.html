@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            插入排序
+         */
+        /* 
+        免费课第一周：
+        js数据类型：
+           基本数据类型
+               number
+               string
+               boolean
+               null
+               undefined
+               Symbol
+           引用数据类型
+               对象
+                   普通对象
+                   数组
+                   Math
+                   Date的实例
+                   正则
+               函数
+
+               基本数据类型操作的是值
+               引用数据类型操作的地址
+               堆栈内存：
+               栈内存：
+                   为代码执行提供环境
+                   存储基本数据类型值和空间地址
+               堆内存：
+                   存储引用数据类型的值
+         */
+        /* 
+        number:
+            组成：有效数字和NaN
+            NaN(not a number):NaN和谁都不相等(包括他自己)
+            Number：把其他数据类型转数字
+            isNaN：检测当前值是否是一个非有效数字，如果是就返回true反之就返回false
+            parseInt、parseFloat：把字符串转数字(从左往右依次检测数字，直到遇到非有效数字立即停止，把找到的数字返回出去，parseInt不识别小数点，parseFloat识别小数点)
+            (23).toFixed(2):返回值是字符串，保留指定小数位数(还会进行四舍五入)
+        string：
+            toString():基本数据类型直接加引号
+                        引用数据类型：普通对象是 '[object Object]'
+                                     数组：把每一项都toString，然后在拼接起来(逗号也得拼)
+            四则运算：在运算中如果出现了不是number数据类型的，要先转number后运算
+            拼接：在加法中：如果加号和引号相遇了，就是字符串拼接
+                            引用数据类型在拼接的过程中，要进行数据类型转换
+        boolean：true、false
+
+            Boolean、!、!!
+            把其他数据类型转布尔有且只有0 null undefined NaN '' false转布尔是false，其余的是true
+            !:转布尔，然后在取反
+            !!:转布尔，取反然后在取反(跟Boolean等价)
+        null和undefined
+
+        普通对象：
+        数组：
+           */
+        /* 
+           数据类型比较:
+                引用数据类型比较的是空间地址
+                对象 == 字符串：转字符串
+                全部转数字
+                null == null
+                undefined == undefined
+                null == undefined
+                其余的和谁都不相等
+                NaN和谁都不相等
+                let fn = function(){};
+                let b = fn;
+                fn == b
+            逻辑运算符：
+                +=/-=:累加。累减
+                i++/i--:先取值后运算
+                ++i/--i:先运算后取值
+                %：取余数
+                &&：前边转布尔是true，就取后边的，反之就取前边的
+                ||：前边转布尔是true，就取前边的，反之就取后边的
+
+            三个判断和三个循环
+                if/else  else if   if
+                三元运算符：判断的条件?条件成立做的事：不成立做的事；如果你啥事也不做，你也要用null站位
+                switch case：绝对比较
+                break、default(else等价)
+            for循环
+            while：一般用于不知道循环多少次的循环
+            for in: 一般情况下是遍历对象的
+        数据类型检测：
+            typeof ：检测数据类型的属性
+                返回值是字符串
+                字符串里就是数据类型
+                局限性：检测null/普通对象、数组的返回值都是 'object',
+                不能够详细区分null/普通对象、数组
+            instanceof：检测当前值是否属于某个类
+            constructor：基于构造函数检测当前数据类型的
+            Object.prototype.toString.call()
+
+
+            */
+        // let n = 5; // 6 7
+        // console.log(n++) // 5
+        // console.log(++n) // 7
+        // if(){
+        //     if(){
+
+        //     }
+        // }
+
+        // console.log(1);
+        //     console.log(2
+        // console.log(3);
+
+        // 如果是语法错误，浏览器啥也不输出
+
+        // console.log(1)
+        // console.log(ss);
+        // console.log(3)
+        // 3()
+        // 如果是引用错误不会影响上面的代码输出
+        // let ary = ['true', 'false', 'null'];
+        // for(var key in ary){
+        //     console.log(key)
+        //     console.log(ary[key])
+        // }
+
+
+        /* 
+        函数：
+        形参、实参、arguments、返回值
+         */
+        //  function fn(num){ // 12
+
+        //     // return num
+        //     arguments
+        //  }
+
+        //  console.log(fn(12)) // undefined
+        // function sum(n,m){
+        //     return n+m
+        // }
+        // console.log(1,2,3)
+
+        // function sum(n = 0,m = 0,x = 0){
+        //     console.log(n,m,x);
+        //     n = 100
+        //     console.log(arguments);
+        //     // let total = null;
+        //     // for (var i = 0; i < arguments.length; i++) {
+        //     //    var item = Number(arguments[i]);
+        //     //    if(!isNaN(item)){
+        //     //        total+=item
+        //     //    }
+        //     // }
+        //     // return total
+        // }
+        // console.log(sum(true, false, NaN))
+
+        // let fn = function (n) {
+        //     return n
+        // }
+        // let fn = n => n;
+
+    //     let fn = function (n) {
+    //         return function (m) {
+    //             return m
+    //         }
+    //     }
+
+    //     let f = fn();
+    //    console.log(f(1)) 
+        // console.log(f)
+
+        let fn = n => m => m;
+        let f = fn();
+       console.log(f(1)) 
+
+        /* 
+          let fn = n => m => m
+         */
+    </script>
+</body>
+
+</html>

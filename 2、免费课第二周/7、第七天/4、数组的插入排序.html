@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        数组的插入排序
+        1、先抓一张牌放到手里
+        2、继续抓桌面上的每一张牌，然后拿当前抓的牌和手里的牌从右往左依次做比较，如果抓到的牌比手里的牌大了，那就把抓到的牌放到那张牌的后面，并且停止比较
+        3、如果你抓的牌比你手里的都小，就直接放到最左边
+        */
+        let ary = [12,23, 12, 45, 21, 12, 11, 55,4];
+
+        function insert() {
+            let handAry = []; // 创建一个空数组用来存放手里的牌
+            // 先抓取第一张牌放手里
+            handAry.push(ary[0]);
+
+            // 此次循环是依次抓取每一张牌
+            for (var i = 1; i < ary.length; i++) {
+                var gradCard = ary[i] // 代表抓的每一张牌
+
+                // 此循环是把抓到的牌和手里的牌从右往左依次做比较
+                for (var j = handAry.length - 1; j >= 0; j--) {
+                    var next = handAry[j] // 代表你手里的每一张牌
+                    if (gradCard >= next) {
+                        // 如果抓到的牌比手里的牌大了，就把抓到的牌放到这张牌的后面
+                        handAry.splice(j + 1, 0, gradCard);
+                        break; // 结束此次比较
+                    }
+                    if (j === 0) {
+                        // 如果此条件成立，说明你抓的牌比手里的牌都小，就把这张牌直接放到手里牌的最左边
+                        handAry.unshift(gradCard);
+                    }
+                }
+            }
+            return handAry
+        }
+        console.log(insert(ary))
+    </script>
+</body>
+
+</html>

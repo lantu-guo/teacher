@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 200px;
+            margin: 20px auto;
+            display: flex;
+            /* border: 1px solid black; */
+        }
+
+        span {
+            display: block;
+            width: 60%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid black;
+            margin-right: 10px;
+            font-weight: 600;
+            color: orangered;
+        }
+
+        button {
+            display: block;
+            height: 20px;
+            width: 40%;
+            background: orangered;
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span id="show">放置验证码</span><button id="btn">看不清</button>
+    </div>
+
+    <input type="text" id="input">
+    <script>
+        /* 
+        1、操作谁就获取谁
+        2、封装了一个随机产生验证码的方法
+        3、给btn绑定点击事件，当点击的时候去产生一个随机验证码
+        4、给input绑定失去焦点事件，当失去焦点时，判断两个值是否相等
+        */
+        let show = document.getElementById('show');
+        let btn = document.getElementById('btn');
+        let input = document.getElementById('input');
+
+        function createCode() {
+            let str = 'asdfghjklASDFGHJKL1234567890';
+            let value = '';
+            for (var i = 0; i < 4; i++) {
+                // Math.round(Math.random*(m-n)+n)
+                // n=0,m = str.length-1
+                let index = Math.round(Math.random() * (str.length - 1 - 0) + 0);
+                // 随机产生一个索引
+                let item = str[index]; // 通过缩影去str里取值
+                value += item; // 把取到的值拼接到value里
+            }
+            show.innerHTML = value; // 把value插入到span里
+
+        }
+
+        createCode(); // 页面初次加载的时候让验证码生成一次
+        btn.onclick = createCode;
+        input.onblur = function () {
+            let inputValue = input.value.toLowerCase();
+            // 拿到input的值并且转小写
+            let showValue = show.innerText.toLowerCase();
+            // 拿到页面中的验证码，并且转小写
+            if (inputValue === showValue) {
+                alert('ok');
+            } else {
+                // 如果两个值不相等，输出no，并且让验证码在生成一次，把input的值清空
+                alert('no');
+                createCode();
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

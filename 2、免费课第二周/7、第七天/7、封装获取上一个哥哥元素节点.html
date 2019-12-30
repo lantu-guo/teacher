@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="one">222</li>
+        <!-- 333 -->
+        <li id="flag"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        let flag = document.getElementById('flag');
+        function prev(context){
+            // 获取上一个哥哥节点
+            var pre = context.previousSibling;
+
+            // 如果上一个哥哥节点的nodeType不等于1，说明此节点不是元素节点，要继续循环获取上一个哥哥节点的哥哥节点，直到节点的nodeType是1为止
+            while(pre.nodeType !== 1){
+                // 获取上一个哥哥节点的哥哥节点
+               pre =  pre.previousSibling;
+            }
+            return pre;
+        }
+        console.log(prev(one))
+        // flag.previousSibling
+        // 课下的话试试传入第一个元素节点，看看能不能正常运行,怎么解决
+    </script>
+</body>
+</html>

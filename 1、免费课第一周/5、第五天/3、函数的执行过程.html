@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数最主要的特点：封装，把实现某个功能的代码封装到一起，以后想实现这个功能，就直接调用这个函数就好了
+        // function sum(n,m){
+        //     // arguments:函数的实参集合
+        //     // return 函数的返回值，return 的值就是函数的执行结果；return下面的代码不下执行
+        //     // let total = n+m;
+        //     // return total;
+
+        //     arguments[0] = 33;
+        //     console.log(arguments); // [10, 12]
+        //     console.log(n,m); // 10,12
+        //     // 在严格模式下，映射关系取消
+        //     // arguments和形参存在一一映射的关系，一个改变，另外一个也跟着改变
+        // }
+        // console.log(sum(10,12))
+
+        let obj = 33;
+        function sum(n,m){
+            let total = n+m;
+            console.log(obj)
+            return total;
+        }
+        let f = sum(10, 12);
+        console.log(f);
+        console.log(total);
+
+
+    </script>
+</body>
+</html>

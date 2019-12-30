@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            cursor: pointer
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // let i = 5; // 6 5
+        // i++ > 5 ? i++ : i--;
+        // console.log(i); // 5 6 无限大  4 
+    </script>
+    <script>
+        let body = document.body;
+        let i = 0;
+        let ary = ['red', 'yellow', 'orangered', 'green', 'pink', 'blue', 'purple'];
+        // body.onclick = function () {
+        //     // 函数每执行一次，就会通过i去数组里获取相应的颜色，然后在给i加累加1；
+        //     i > ary.length - 1 ? i = 0 : null;
+        //     // 如果i的值大于数组的最后一项索引了，就让i变为0;
+        //     body.style.backgroundColor = ary[i++]
+        // }
+
+    // 简单写法
+    // body.onclick = function () {
+    //   body.style.backgroundColor = ary[i > ary.length - 1 ? (i = 0,i) : i++]
+    // }
+    </script>
+</body>
+
+</html>

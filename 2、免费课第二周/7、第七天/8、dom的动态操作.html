@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="box">1111111111</div>
+
+    <script>
+        /* 
+        1、document.createElement('标签名')：动态创建元素节点
+        2、document.createTextNode('222')：动态创建一个文本节点
+        3、父节点.appendChild(节点)：把指定节点插入到父节点的末尾
+        4、父节点.insertBefore(n,m):把n插入到m的前面
+        5、父节点.removeChild(你要移除的节点)：移除节点
+        */
+       let box = document.getElementById('box');
+        console.log(box)
+        let div = document.createElement('div'); // 动态创建div
+        let text = document.createTextNode('222'); // 动态创建文本节点
+        div.appendChild(text) // 把text文本节点插入到div元素节点的末尾
+        // document.body.appendChild(div) // 把div插入到body的末尾
+        // console.log(div)
+        // console.dir(text)
+        document.body.insertBefore(div,box) // 把div插入到box的前面
+        // document.body.removeChild(box) // 在页面中移除box元素
+
+
+    </script>
+</body>
+</html>

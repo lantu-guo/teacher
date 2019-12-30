@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        复习：
+        1.js数据类型：
+            基本数据类型
+                number数字
+                string字符串
+                boolean布尔
+                null：空指针对象
+                undefined：未定义
+                Symbol：创建唯一值
+            引用数据类型
+                对象
+                    普通对象
+                    数组
+                    Math对象
+                    Date的实例
+                    正则
+                函数
+                    普通函数
+                    类
+        */
+        //    let a = Symbol(1);
+        //    let b = Symbol(1);
+        //    console.dir(a);
+
+        // let Math = {
+        //     abs:function(){}
+        // }
+        // Math.abs()
+        // let res = new Date()
+        // console.dir(res)
+
+        // let reg = /^\d{1,2}$/
+        // console.log(reg.test('211'))
+
+        /* 
+        number：
+        Number：把其他数据类型转数字
+        isNaN:检测当前值是否是一个非有效数字，如果是，就返回true，反之就返回false
+        parseInt和parseFloat：把字符串还转数字
+        toFixed
+
+
+        string:
+        null和undefined不能调用toString方法
+        toString()
+        四则运算：如果在运算过程中出现了NaN，那结果就是NaN
+        字符串拼接：加号和引号相遇，就是字符串拼接
+
+        引用数据类型在拼接中照样进行数据类型转换(转字符串)
+
+        对象 == 字符串：转字符串
+        其余的都转数字
+        null、undefined
+        NaN
+        对象 == 对象
+
+        || && % +=/-=  i++/i--  ++i/--i
+
+        if(3 && 4){
+           // 他会把括号里的值进行转布尔，如果是true，那条件就成立，反之就不成立 
+
+           // 这些条件只要有一个成立，那其余的条件不管是否成立，都不在执行
+        }
+        if(0 || 1){
+
+        }else if(){
+
+        }else if(){
+
+        }
+        else {
+            / /上边条件都不成立，就走else
+        }
+        let a = 1 && 0 || 3 && 4
+
+        条件？条件成立做的事：不成立做的事
+        // 如果你想做多件事，就拿小括号括起来，中间拿逗号隔开
+        // 如果你什么也不做，null站位
+        // 一般用在简单的条件判断里
+
+        switch(1){
+            // 进行的是绝对比较，不会进行数据类型转换
+            case 1:
+                console.log(1);
+                break;
+            case 2:
+                console.log(2);
+                break;
+            default: // else等价
+                console.log(3)
+        }
+        
+        for(var i=0;i<5;i++){
+
+        }
+        console.log(i) // 5
+
+        let obj  ={
+            name:11,
+            age:22
+        }
+        for(var key in obj){
+            key:对象里每一项的属性名
+            obj[key]:每一个属性名所对应的属性值
+            obj.key // 这样写，key就会被当做一个普通的属性名，获取属性值获取不到，那返回值就是undefined
+        }
+
+        while(1){
+            // 阻塞线程
+            // js是单线程的，所以下面的代码就不执行
+        }
+
+        // 函数：封装
+        function fn (n,m){ / /形参
+            // 形参和实参是一一对应的
+            // 形成私有作用域(私有栈内存)
+            // 形参赋值
+        }
+        fn(10, 12) // 实参
+        */
+        //    let a = {};
+        //    let b = a;
+        //    a === b // true
+        //         let num = 23.6;
+        //         console.log(num.toFixed()) // '24' 
+        //         console.log(num.toFixed(2)) // '23.60' 
+        // 把数字转换为字符串，而且内部进行了四舍五入，toFixed传的参数就是保留小数的位数
+
+        //     function fn(a) {
+        //       return  a() // undefined
+        //     }
+        //     let f = function () {}
+        //    console.log(fn(f)) // undefined
+
+        // let s = (function () {
+        //     return 
+        //   })()
+        // console.log(s)
+
+        let s = function(){}
+        btn.onclick = function(){}
+        
+        +function(){}()
+        -function(){}()
+        ~function(){}()
+        !function(){}()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        插入排序：
+        1、先抓一张牌放到自己手里
+        2、去抓取剩下的每一张牌，和手里的牌从右往左依次做比较，如果发现抓的牌比手里的牌大了，直接放到那张牌的后面
+        3、如果你抓的牌比手里的每一张牌都小，就直接放到最左边
+        */
+        let ary = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+        function insertSort(ary) {
+            let handAry = [];
+            handAry.push(ary[0]);
+            for (var i = 1; i < ary.length; i++) {
+                var cur = ary[i]; // 当前抓取的牌
+                for (var j = handAry.length - 1; j >= 0; j--) {
+                    var item = handAry[j] // 手里的每一张牌
+                    if (cur > item) {
+                        handAry.splice(j + 1, 0, cur);
+                        break;
+                    }
+                    if (j === 0) {
+                        handAry.unshift(cur);
+                    }
+                }
+            }
+            return handAry;
+        }
+        // console.log(insertSort(ary));
+
+
+        function quickSort(ary){
+            /* 
+            思路：
+            1、从数组中拿出一个值作为基准，并且从原数组中删除那一项
+            2、创建两个数组，把原数组中的每一项和基准做比较，如果小于基准，放到左边数组，反之放到右边数组
+            3、不断重复1和2步骤(递归)，直到数组的length<=1,为止，就停止递归,把数组return出去
+            4、从左往右依次你把数组和基准拼接起来得到的数组就是排好序的数组
+            */
+           if(ary.length<=1){
+            return ary;
+           };
+           let middleIndex = Math.round(ary.length/2);
+           let middleValue = ary.splice(middleIndex, 1)[0];
+        
+           let leftAry = [],
+               rightAry = [];
+            for (var i = 0; i < ary.length; i++) {
+               if(ary[i]<middleValue){
+                   leftAry.push(ary[i])
+               }
+               else {
+                   rightAry.push(ary[i])
+               }
+            }
+            return quickSort(leftAry).concat(middleValue, quickSort(rightAry))
+        }
+        console.log(quickSort(ary))
+    </script>
+</body>
+
+</html>

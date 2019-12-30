@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        基本数据类型值布尔boolean
+        true false
+        1、把其他数据类型转换为布尔类型 
+            1、Boolean(val)
+            2、!val： 把其他数据类型值转布尔，然后取反
+            3、!!val:把其他数据类型值转布尔，然后取反在取反 (等价于Boolean(val))
+        */
+       // 把其他数据类型值转布尔，有且只有null、undefined、NaN、0、 ''、false转布尔是false，其余的都是true
+        //    console.log(Boolean(null)); // false
+        //    console.log(!!null) // false
+        //    console.log(Boolean(undefined)); // false
+        //    console.log(Boolean(NaN)); // false
+        //    console.log(Boolean(0)); //false
+        //    console.log(Boolean(''));// false
+        //    console.log(Boolean(false));// false
+
+        //    console.log(Boolean('     '))// true
+        //    console.log(Boolean({})) // true
+        //    console.log(!0) // true
+        //    console.log(!isNaN(!NaN)) // true
+        //    console.log(!Number(NaN) == false)// true == false // false
+
+        //    let num = !Number(NaN);
+        //    console.log(num)
+        //    console.log(!!parseInt( !Number( !!isNaN('13px') ) )) // false
+        //    console.log(!!true) // true
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            width: 500px;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+        ul li {
+            border-botom: 1px solid black;
+        }
+        ul li:nth-child(odd) {
+            background: red;
+        }
+        ul li:nth-child(even) {
+            background: green;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <ul id="box">
+
+    </ul>
+    <script>
+        let box = document.getElementById('box');
+        let ary = [1,2,3,4,5]; // 模拟后台请求的数据
+
+        // 遍历数组的每一项，映射成想要的字符串格式的标签
+        let res = ary.map((item, index)=>{
+            return `<li class="flag">我是第${item}个li</li>`
+            // return '<li class="flag">我是第'+ item +'个li</li>'
+        });
+        console.log(res);
+        res = res.join('');
+        // 把数组转成字符串
+        console.log(res);
+        // 把字符串插入到页面的ul里
+        box.innerHTML = res;
+    </script>
+</body>
+</html>

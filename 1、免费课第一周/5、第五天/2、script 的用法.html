@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style></style>
+    <!-- <script>
+        // 把script放到顶部，有可能获取元素获取不到
+            // let box = document.getElementById('box');
+            // console.log(box);
+            window.onload = function(){
+                // 当页面中的元素和结构全部加载完成之后，这个函数才会被触发
+                 let box = document.getElementById('box');
+                 console.log(box);
+            }
+            console.log(window)
+            alert() // 获取window上的属性可以省略window.
+            // window.alert()
+    </script> -->
+</head>
+
+<body>
+    <div id="box">let a = 12</div>
+    <!-- <script>
+    /* 
+        script的用法：
+        1、最常见的位置就是把script放到body的底部，为了能够正常获取页面中的元素
+    */
+        let box = document.getElementById('box');
+        console.log(box);
+    </script> -->
+
+    <script>
+        let a = 12;
+    </script>
+    <script>
+        console.log(a) // 12
+    </script>
+    <script src = ''>
+        console.log(222222) // 如果script你写了src属性，那当前script标签里的代码就失效了
+    </script>
+</body>
+
+</html>

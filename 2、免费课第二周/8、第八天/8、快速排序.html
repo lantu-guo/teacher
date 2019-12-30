@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        快速排序
+        1、从原数组中挑选一个值作为基准，然后把这一项在原数组中删除
+        2、创建两个空数组，循环数组的每一项，和基准进行比较，如果小于基准，就放到左边数组里，反之就放到右边数组
+        3、不断重复1和2步骤(递归)，直到数组的length小于等于1为止
+        4、最后从左往右依次把数组和基准拼接到一起，就是排好序的数组
+        */
+        let ary = [3, 2, 1];
+
+        function quickSort(ary) {
+            // 递归结束的条件
+            if (ary.length <= 1) {
+                return ary
+            }
+            // 1、从原数组中挑选一个值作为基准，然后把这一项在原数组中删除
+            let middleIndex = Math.round(ary.length / 2);
+            let middleValue = ary.splice(middleIndex, 1)[0];
+
+            // 2、创建两个空数组，循环数组的每一项，和基准进行比较，如果小于基准，就放到左边数组里，反之就放到右边数组
+            let leftAry = [],
+                rightAry = [];
+            for (var i = 0; i < ary.length; i++) {
+                var cur = ary[i] // 数组的每一项
+                if (cur < middleValue) {
+                    leftAry.push(cur)
+                } else {
+                    rightAry.push(cur)
+                }
+            }
+            // 3、不断重复1和2步骤(递归)，直到数组的length小于等于1为止
+            // 4、最后从左往右依次把数组和基准拼接到一起，就是排好序的数组
+            return quickSort(leftAry).concat(middleValue, quickSort(rightAry))
+
+        }
+        console.log(quickSort(ary)) // [1,2,3]
+
+
+        // return quickSort([]).concat(1,quickSort([3,2]))
+        //          return []                 [2,3]
+
+        // return quickSort([]).concat(2,quickSort([3]))
+        //          return []               return [3]
+    </script>
+</body>
+
+</html>

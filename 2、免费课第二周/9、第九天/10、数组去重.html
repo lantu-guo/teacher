@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        数组去重：
+        */
+        let ary = [6, 6, 3];
+        /* 
+        1、创建一个空对象，把数组的每一项既作为属性名，有作为属性值，存储到对象中，但是存储的时候得判断一下，对象中有没有这个属性名所对应的属性值，如果有说明这一项在数组中就是重复项，就把这一项在原数组中删除
+        */
+        // function unique(ary) {
+        //     let obj = {};
+        //     for (var i = 0; i < ary.length; i++) {
+        //         var cur = ary[i];
+        //         if (obj[cur] !== undefined) {
+        //             ary[i] = ary[ary.length - 1];
+        //             ary.length--;
+        //             i--;
+        //         } else {
+        //             obj[cur] = cur
+        //         }
+        //     }
+        //     return ary
+        // }
+        // console.log(unique(ary))
+
+
+            /* 
+            1、创建一个空对象，把数组的每一项既作为属性名，有作为属性值，存储到对象中
+            2、创建一个空数组，遍历对象，把对象的每一个键值对的属性值存储到数组中
+            */
+        function unique(ary){
+            let obj = {};
+            for (var i = 0; i < ary.length; i++) {
+               var cur = ary[i];
+               obj[cur] = cur;
+            }
+            let newAry = [];
+            for(var key in obj) {
+               newAry.push(obj[key]) 
+            }
+            return newAry
+        }
+        console.log(unique(ary))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        #box {
+            width: 800px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin: 30px auto;
+            color: orangered;
+            font-size: 20px;
+            font-weight: 400;
+            background: -webkit-linear-gradient(top right, rgba(255, 0, 0, 0.281), rgba(0, 128, 0, 0.274), rgba(255, 255, 0, 0.178));
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">显示时间</div>
+    <script>
+        let box = document.getElementsByTagName('div')[0];
+        // 不足10补零
+        function addZero(value) {
+            // if(value<10){
+            //     return '0'+value
+            // }
+            // else {
+            //     return value
+            // }
+            return value < 10 ? '0' + value : value;
+        };
+
+        // 转换星期的方法
+        function transDay(value) { // 5
+            let obj = {
+                0: '星期日',
+                1: '星期一',
+                2: '星期二',
+                3: '星期三',
+                4: '星期四',
+                5: '星期五',
+                6: '星期六'
+            };
+            return obj[value];
+        };
+
+        function getTime() {
+            let time = new Date(),
+                year = time.getFullYear(),
+                month = time.getMonth() + 1,
+                date = time.getDate(),
+                day = time.getDay(),
+                hour = time.getHours(),
+                min = time.getMinutes(),
+                sec = time.getSeconds();
+            let res = addZero(year) + '年' + addZero(month) + '月' + addZero(date) + '日 ' + addZero(hour) + '时' + addZero(min) + '分' + addZero(sec) + '秒 ' + transDay(day);
+
+            box.innerHTML = res; // 把处理好的时间插入到页面中
+        }
+        getTime(); // 防止页面刚开始的时候没有时间
+        setInterval(getTime, 1000);  // 定时器让获取时间这个方法每隔一秒钟执行一次，就有了咱们的时钟，这句话是时钟的核心
+    </script>
+</body>
+
+</html>

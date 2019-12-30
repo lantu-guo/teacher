@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        js中的数据类型之number
+            1、number的组成：
+            > 有效数字： 12， 13.5， 13.4 -3， +5， 0
+            > NaN(not a number) 他的意思是不是一个有效数字，但是是number数据类型的【NaN和谁都不相等，包括他自己】
+            */
+        // var num = 12;
+        // var num1 = 12;
+        // console.log(num == num1); // true
+        // console.log(13 == 13); // true
+        // console.log(NaN == NaN); // false
+
+        // 把其他数据类型转换为数字类型 Number(val)
+
+        // 1、把字符串转换为数字
+        // 1、把字符串转换为数字，只要字符串中出现了非有效数字，那转换的结果就是NaN(数字里的第一个点和+-号不算)
+        // 2、如果左右有空格，会默认把空格去掉
+        // 3、空字符串里不管有没有空格转数字是0
+            //  console.log( Number('12') ) // 12
+            //  console.log(Number('12px')) // NaN
+            //  console.log(Number('  12   ')) // 12
+            //  console.log(Number('1  2')) // NaN
+            //  console.log(Number('12.5')) // 12.5
+            //  console.log(Number('12.5.3')) // NaN
+            //  console.log(Number('+12.5')) // 12.5
+            //  console.log(Number('-12.5')) // -12.5
+            //  console.log(Number('')) // 0
+            //  console.log(Number('  ')) // 0
+            // console.log(Number('中国')) // NaN
+
+        // 2、把布尔转数字 true false
+            // true转数字是 1
+            // false转数字是 0
+            // console.log(Number(true)) // 1
+            // console.log(Number(false)) // 0
+
+        // 3、null和undefined
+            // null转数字是0
+            // undefined转数字是NaN
+            // console.log(Number(null)); // 0
+            // console.log(Number(undefined)) // NaN
+
+
+        // 引用数据类型转数字：先把值默认转换为字符串(浏览器内部会默认去调用toString方法)，然后在把字符串转数字
+
+        // 4、普通对象转数字
+            // 所有的普通对象转字符串都是 '[object Object]'
+            // 所有的普通对象转数字都是NaN
+            // let obj = {name:11};
+            // let obj1 = {};
+            // console.log(Number(obj)) // NaN
+            // console.log(Number(obj1)) // NaN
+            // console.log(obj1.toString()) // '[object Object]'
+            // console.log(Number( Number(obj) )) // NaN
+
+        // 5、数组转数字
+            // 数组转数字是把数组里的每一项先转字符串，然后连同逗号和转换的结果拼接起来，再去转数字
+            // 空数组转字符串是空字符串
+            // let ary = [1, {}, [], true,null, undefined,'we'];
+            // console.log(ary.toString()) // '1,[object Object],,true,,,we';
+            // console.log(true.toString()) // 'true'
+            // console.log([true].toString()) // 'true'
+            // console.log(Number(ary)) // NaN
+            // console.log(Number([1])) // '1'-->1
+            // console.log(Number([12,23])) // '12,23'-> NaN
+            // console.log(Number([])) // ''--> 0
+            // console.log(Number( Number( 'Number(13)' ) )) // NaN
+            // console.log(Number( [[[]]] )) // 0 
+            // console.log([[]].toString()) // ''
+
+        // parseInt和parseFloat 是把字符串转换为数字
+
+        // 从左往右依次查找有效数字，一旦发现非有效数字，就立即停止查找，把之前找到的数字返回(parseInt不识别小数点，parseFloat识别一位小数点)
+        // 如果输入的值不是字符串类型的，会先把值转换为字符串在运算
+            // console.log(parseInt('12')) // 12
+            // console.log(parseInt('12.5')) // 12
+            // console.log(parseFloat('12.5')) // 12.5
+            // console.log(parseFloat('w12')) // NaN
+            // console.log(parseFloat('12dafasfadfasfas')) // NaN
+            // console.log(parseInt(true)) // 'true'->NaN
+            // console.log(parseFloat('12.4.5')) // 12.4
+            // console.log(parseFloat(null)) // 'null' ->NaN
+            // console.log(parseFloat([1])) // 1
+            // console.log(parseFloat([1.5,2])) // '1.5,2'->1.5
+            // console.log(parseFloat('[1.2,4]')) // NaN
+
+
+        // isNaN：检测当前值是否是一个非有效数字，如果是非有效数字，就返回true，否则返回false
+            // 如果你输入的不是number数据类型的值，他会默认调用Number方法，转数字，然后在检测
+            // (如果检测的值是有效数字，就返回false，反之就返回true)
+
+            // console.log(isNaN(NaN)) // true
+            // console.log(isNaN(1)) // false
+            // console.log(isNaN(true)) // false
+            // console.log(isNaN(undefined)) // true
+
+            // var num = NaN;
+            // num = undefined;
+            // console.log(parseInt( Number( isNaN(num) ) )); // 
+
+            // const num = NaN;
+            // num = undefined; // 报错
+            // console.log(parseInt( Number( isNaN(num) ) ));
+    </script>
+</body>
+
+</html>

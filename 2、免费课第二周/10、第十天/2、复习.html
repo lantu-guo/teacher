@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        /* 
+        数组的方法:15个
+            push、pop、unshift、shift、splice、 sort、reverse
+            slice、concat、join、indexOf(n,m)、lastIndexOf(n,m)、includes、forEach((item, index)=>{})、map((item, index)=>{return})
+
+        字符串：
+            charAt()、charCodeAt()、
+            substr(n,m):从索引n开始，截取m个
+            substring(n,m)：从索引n开始，截取到索引m(不包括m对应的那一项)
+            slice(n,m):从索引n开始，截取到索引m(不包括m对应的那一项)【支持负数】
+            split('')
+            replace(n,m) (/n/g, m)
+            toUpperCase()
+            toLowerCase()
+            indexOf
+            lastIndexOf
+            includes
+            trim
+            trimLeft
+            trimRight
+            concat('')
+
+
+         */
+        //  ary.sort((a,b)=>{
+        //     // return a-b
+        //     return b-a
+        //  })
+    //     let ary = [1,2,3]
+    // //     ary.slice()
+    // //     ary.slice(0)
+    // //    console.log(ary.slice(0,ary.length)) 
+    //     console.log(ary.concat())
+    //     console.log([...ary])
+    // let str = '123344556';
+    // console.log(str[100]) // undefined
+    // console.log(str.charAt(100)) // ''
+    // 时间格式化
+    // queryUrlParams
+
+    /* 
+    Math：
+    PI:3.1415926
+    abs(),
+    ceil,
+    floor,
+    max(...[])
+    min,
+    round
+    random,
+    sqrt
+    pow(n,m)
+     */
+
+     /*     
+     获取n到m之间的随机整数(包括n和m)
+     Math.round(Math.random()*(m-n)+n)
+     获取3到6之间的随机整数(包括3和6)
+      */
+        // console.log(Math.round(Math.random()*(6-3)+3))
+    /* 
+    Date的实例：
+    let time = new Date();
+    console.log(time)
+     */
+    //   let time = new Date();
+    // console.log(time)
+    //         console.log(time.getMonth()+1)
+    // console.log(time.getDay())
+    // function transDay(key){
+    //     let obj = {
+    //         0:'星期日',
+    //         6:'星期六'
+    //     }
+    //     return obj[key]
+    // }
+    // // console.log(transDay(6))
+    // let endTime = new Date('2019-12-28 12:57:00');
+
+    // let time = new Date();
+    // console.log(endTime - time);
+    /* 
+    
+     */
+        // let box = document.getElementById('box');
+        // box.childNodes
+        // box.children
+        // box.firstChild
+        // box.firstElementChild
+        // box.lastChild
+        // box.lastElementChild
+        // box.previousSibling
+        // box.nextSibling
+        // box.previousElementSibling
+        // box.nextElementSibling
+        // box.parentNode
+        // let div = document.createElement('div');
+        // document.body.appendChild(div);
+        // removeChild,
+        // insertBefore('w', div);
+        // document.createTextNode('2222');
+        // let name = 333;
+        // box.setAttribute('index', 1);
+        // box.getAttribute('index');
+        // box.removeAttribute('index')
+        // box.classList.add/remove/replace
+        // `我是${name}哈哈`
+
+        // 求1到3之间的和
+        function fn(num){
+            if(num>3){
+                return 
+            }
+           return num + fn(num+1)
+        }
+        fn(1); // 6
+        return 1+fn(2); // 5
+        //        return 2 + fn(3) // 3
+        //                    return 3 + fn(4) // 4
+        //                                 return 0
+
+        function createCode(){
+            let value = ''
+            for (var i = 0; i < 4; i++) {
+    let index = Math.round(Math.random()*(9-1)+1);
+                value+=index;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        封装queryUrlParams方法
+
+        let url = https://www.baidu.com?name=erYa&age=18&wd=千与千寻&sex=gril
+        */
+        //    let obj = {
+        //        name:'erYa',
+        //        age:'18',
+        //        wd:'千与千寻',
+        //        sex:'gril'
+        //    }
+        //    obj.name
+        let url = 'https://www.baidu.com?name=erYa&age=18&wd=千与千寻&sex=gril#index'
+
+        function queryUrlParams(url) {
+            let paramsIndex = url.indexOf('?') // 获取参数开始的位置(？的索引)
+            let paramsStr = url.substring(paramsIndex + 1); // 获取url里的参数
+            console.log(paramsStr) // 'name=erYa&age=18&wd=千与千寻&sex=gril'
+            let paramsAry = paramsStr.split('&'); // 把参数以 '&'作为分割符转为数组
+            console.log(paramsAry) // ["name=erYa", "age=18", "wd=千与千寻", "sex=gril"]
+            let obj = {}; // 创建一个空对象，准备接收参数(键值对)
+
+            // 循环数组化的参数
+            for (var i = 0; i < paramsAry.length; i++) {
+                var cur = paramsAry[i] // 'name=erYa' 'age=18'
+                // 把数组的每一项以=作为分隔符转换为小数组，小数组的第一项就是键值对的属性名，第二项就是属性值
+                var itemAry = cur.split('='); // ['name', 'erYa']  ['age', '18']
+                console.log(itemAry);
+                // 把键值对增加到对象中
+                obj[itemAry[0]] = itemAry[1]
+                // obj['name'] = 'erYa'
+            }
+
+            return obj
+        }
+        console.log(queryUrlParams(url))
+
+
+        // let obj = {
+        //     age: "18",
+        //     name: "erYa",
+        //     sex: "gril#index",
+        //     wd: "千与千寻",
+        //     hash:'index'
+        // }
+    </script>
+</body>
+
+</html>

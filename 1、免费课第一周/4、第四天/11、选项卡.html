@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 500px;
+            margin: 20px auto;
+            /* border: 1px solid black; */
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            position: relative;
+            top: 1px;
+        }
+
+        ul li {
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid black;
+            margin-right: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #box div {
+            width: 500px;
+            height: 200px;
+            line-height: 200px;
+            font-size: 50px;
+            border: 1px solid black;
+            display: none;
+        }
+
+        ul li.active {
+            border-bottom-color: orangered;
+            background: orangered;
+        }
+
+        #box div.active {
+            display: block;
+            background: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="ul">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div class="active">一</div>
+        <div>二</div>
+        <div>三</div>
+    </div>
+    <script>
+        // 1、想操作谁就获取谁
+        let ul = document.getElementById('ul');
+        let navList = ul.getElementsByTagName('li');
+        let box = document.getElementById('box');
+        let tabList = box.getElementsByTagName('div');
+
+        // 2、给相应的元素绑定相应的事件
+        for (var i = 0; i < navList.length; i++) {
+            navList[i].myIndex = i; // 给每一个li增加自定义属性，属性值为当前的i
+            navList[i].onclick = function () {
+                // 循环绑定事件的时候，函数里的代码并不会执行
+                // this // 点击谁this就是谁(this就是当前点击的元素)
+
+                // 函数执行时把当前li的索引位置传递过去
+                fn(this.myIndex)
+            }
+        }
+
+        /* 
+        当你点击的时候，for循环早已经运行结束，此时的i已经变成3，所以不管你点击哪个li，i的值都是3
+        */
+        /* 
+        i = 0
+        navList[0].myIndex = 0;
+        navList[0].onclick = function(){
+            console.log(i)
+            // fn(i);
+        }
+
+        i=1
+        navList[1].myIndex = 1;
+        navList[1].onclick = function(){
+            console.log(i)
+            // fn(i);
+        }
+
+        i=2
+        navList[2].myIndex = 2;
+        navList[2].onclick = function(){
+            console.log(i)
+            // fn(i);
+        }
+
+        i=3
+        循环结束
+        
+        
+        */
+
+        function fn(index) {
+            // 1、清除所有li和所有div的class名
+            for (var i = 0; i < navList.length; i++) {
+                navList[i].className = '';
+                tabList[i].className = '';
+            }
+
+            // 给相应的li和div增加class名
+            navList[index].className = 'active';
+            tabList[index].className = 'active';
+        }
+    </script>
+</body>
+
+</html>

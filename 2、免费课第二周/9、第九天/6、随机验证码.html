@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        /* 
+        需求：每隔一秒钟，页面产生一个随机1到9的四位数，十秒钟之后停止显示，页面上显示的就是中奖的号码
+        */
+        let inter = null;
+        let flag = null;
+
+
+        function createCode() {
+
+
+          /*   第二种清除定时器的办法
+          if(flag>10){
+                clearInterval(inter);
+                return;
+            }
+            flag++; */
+            let value = '';
+            for (var i = 0; i < 4; i++) {
+                let item = Math.round(Math.random() * (9 - 1) + 1);
+                value += item
+            };
+            show.innerHTML = value;
+        };
+        createCode();
+        inter = setInterval(createCode, 1000);
+
+        // 第一种清除定时器的办法
+        // setTimeout(() => {
+        //     clearInterval(inter)
+        // }, 10000);
+    </script>
+</body>
+
+</html>

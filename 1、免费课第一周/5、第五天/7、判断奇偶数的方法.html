@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="content">
+    <button id="btn">确定</button>
+    <script>
+        let content = document.getElementById('content');
+        let btn = document.getElementById('btn');
+
+        btn.onclick = function(){
+            // 表单元素不能使用innerHTML和innerText去获取内容和设置内容
+            // 使用value属性去设置和获取内容
+            let value = content.value;
+            if(!isNaN(value) && value !== ''){
+                if(value%2 === 0){
+                    alert('这是一个偶数')
+                }
+                else {
+                    alert('这是一个奇数')
+                }
+            }
+            else {
+                alert('这不是一个有效数字，请重新输入');
+                content.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

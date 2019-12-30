@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        任意数求和：
+
+        */
+       function sum(){
+           let total = null; // 创建一个累加的初始值；
+            for (var i = 0; i < arguments.length; i++) {
+                var cur = Number(arguments[i]) // 把数组的每一项转数字
+                if(!isNaN(cur)){
+                // 判断当前的cur是不是一个有效数字，如果是有效数字，当前条件就成立
+                    total+=cur;
+                }
+            }
+            return total
+       }
+
+       console.log(sum(1, true, NaN, undefined, null)) // 2
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        /* 
+        数组的方法：15个
+        数组的增删改5个，都改变原数组
+        let ary = [1,2,3,4];
+        1、push(12,4,34,5)
+        2、unshift()
+        3、pop()
+        4、shift()
+        5、splice
+        6、reverse
+        7、sort
+        8、slice
+        9、concat
+        10、join
+        11、indexOf
+        12、lastIndexOf
+        13、includes
+        14、forEach
+        15、map
+        */
+    //    let ary = [1,2,3,4];
+    //    ary.shift(999)
+    //    console.log(ary)
+    // let ary = [1,2,3,4,5];
+    // splice：
+    // 返回值：是一个数组，存放的删除的内容
+    // 传参：
+    // 1、传一个参数n：从索引n开始删除到数组的末尾
+        // console.log(ary.splice(1)) // [2,3,4,5]
+        // console.log(ary) // [1]
+        //  console.log(ary.splice())  // 一个也不删
+        //  ary.splice(0)// 清空数组
+    // 2、传递两个参数n,m：从索引n开始，删除m个
+            // console.log(ary.splice(2,2)) // [3,4]
+            // console.log(ary) // [1, 2, 5]
+    // 3、传递三个参数n,m,x：从索引n开始，删除m个,用x替换
+        // console.log(ary.splice(1,2,'erYa', 999, 666)) // [2,3]
+        // console.log(ary)
+    // 4、传递三个参数n,0,x:从索引n开始，删除0个,把x放到索引n对应值的前面
+            // console.log(ary.splice(1,0, 'erYa')) // []
+            // console.log(ary)
+
+        // let ary = [1,2,3,4,5];
+        // 删除数组末尾一项有几种方法：
+        // ary.length = ary.length-1
+        // ary.length--
+        // ary.lenght-=1
+        // ary.pop
+        // ary.splice(ary.length-1)
+
+        // 给数组末尾增加内容
+        // ary.push()
+        // ary.splice(ary.length,0,xxx)
+        // ary[ary.length] = 'xxxx'
+        // 数组开头增加;
+        // unshift
+        // splice(0,0,x)
+
+        // 数组开头删除
+        // shift
+        // splice(0,1)
+
+        // 把x插入到m的后面
+        // ary.splice(m+1,0,x)
+
+
+        // reverse
+        // let ary = [33,111,555]; 
+        // console.log(ary.reverse());// [555, 111, 33]
+        // console.log(ary)// [555, 111, 33]
+
+        
+        // sort：
+        // 传参：无或者函数
+        // let ary = [222,111,7]
+        // // console.log(ary.sort())
+        // console.log(ary.sort((a,b)=>{
+        //     return a-b // 升序
+        //     return b-a // 降序
+        // }))
+        // console.log(ary)
+
+
+        // slice
+        // let ary = [22,33,44,55,66];
+        // 传递一个参数n：从索引n开始，截取到数组末尾
+        // console.log(ary.slice(0)) // 克隆
+        // console.log(ary.slice()) // 克隆
+        // 传递两个参数n,m:从索引n开始，截取到m，(不包含索引m对应的那一项)
+            // console.log(ary.slice(1,4)) // [33,44,55]
+        // 从索引n截取到索引m，而且要包含m对应的那一项
+        // slice(n,m+1)
+
+        // console.log(ary.slice(-1, -5)) // []  undefined  报错
+         // 如果传递的是负数，给负数加length，然后在计算
+        //  console.log(ary.slice(-6, -5)) // []
+    
+        // concat
+        // let ary = [22,33,44,55,66];
+        // console.log(ary.concat(true,null)) // []
+
+        // '1' + '2' + '3' = '123'
+        // join:
+        // let ary = [22,33,44,55,66];
+        // console.log(ary.join('$')) // '22$33$44$55$66'
+        // console.log(ary.join('')) // '2233445566'
+        // console.log(ary.join(' ')) // '22 33 44 55 66'
+
+        // console.log(eval(ary.join('+'))) // 220
+        // 把字符串转换为js表达式
+
+        // indexOf
+        // let ary = [1,2,1,2,1,2]; // [1,2]
+        // function unique(ary){
+        //         let newAry = []; // 创建一个新数组，用来存放不重复的每一项
+        //         for (var i = 0; i < ary.length; i++) {
+        //            if(newAry.indexOf(ary[i]) === -1){
+        //                newAry.push(ary[i])
+        //            }
+        //         }
+        //         return newAry
+        // }
+        // console.log(unique(ary)) // [1,2]
+        // console.log(ary)
+
+        // lastIndexOf:
+        // let ary = [22,22,22,33,66,44,55,66];
+        // console.log(ary.lastIndexOf(66)) // 5
+        // console.log(ary.lastIndexOf(66,3)) // 2
+        // // 第二个参数是结束检索的位置
+
+        // includes
+        // let ary = [22,22,22,33,66,44,55,66];
+        // console.log(ary.includes(22)) // true
+        // console.log(ary.includes(100)) // false
+
+        // let ary = [22,22,22,33,66,44,55,66];
+        // console.log(ary.forEach((item, index)=>{
+        //     // 数组有多少项，函数就会执行几次
+        //     // item代表数组的每一项
+        //     // index代表每一项的做引
+        //     console.log(item, index)
+        //     return 1 // 没有用，白写
+        // }))
+
+        // map：遍历映射功能
+        // 返回值是一个数组，原数组有多小项，返回值就有多少项
+        // let ary = [22,22,22,33,66,44,55,66];
+        // let res = ary.map((item, index)=>{
+        //     // return // return啥，数组对应我的那一项就是啥
+        //     return `<p >我是第${item}个</p>`
+
+        // });
+        // res = res.join('')
+        // console.log(res)
+        // document.body.innerHTML = res
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+    
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        函数的定义：函数即方法，把实现某个功能的代码封装到一起，以后你想使用这个功能，就执行这个方法就好了。减少代码的冗余，提高代码的复用率(低耦合,高内聚)
+        */
+
+        /* 
+        榨汁机：
+
+        生产榨汁机，把榨汁这个功能集成到榨汁机里，榨汁机有一个入口(往里放水果的)，还有一个出口(把榨好的果汁倒出来)
+
+        使用榨汁机：把水果放进去
+
+        创建一个函数，把实现某个功能的代码封装到函数里，函数也有一个入口(函数的形参入口)，函数也有一个出口，就做返回值
+
+        函数执行，把实参放进去 函数名()
+        */
+
+        // 需求：那两个数进行求和，然后除以2
+        // let sum = 10 + 12;
+        // sum = sum / 2;
+        // console.log(sum);
+
+        // let sum1 = 20+30;
+        // sum1 = sum1/2;
+        // console.log(sum1);
+
+        // 创建函数
+        function sum(m,n){
+            // 函数执行的第一步，就是给形参变量进行赋值
+
+            // 函数定义的时候，小括号里放的就是函数的形参变量
+            let total = m+n;
+            total = total/2;
+            console.log(total);
+        }
+
+
+
+        // 执行函数  函数名(), 函数执行时，小括号里存放的是函数的实参
+        sum(10, 12);
+        sum(20,30);
+        // 函数可以无限制的执行，而且每一次执行都是相互独立的
+        // 函数每执行一次，函数里的代码就会重新执行一遍
+
+        
+        // function sum(n,m){
+        //       // 函数执行的第一步，就是给形参变量进行赋值
+        //     let total = n+m;
+        //     total = total/2;
+        //     console.log(total)
+        // }
+
+        // sum(10, 12);
+        // sum(20, 30); // 实参
+
+        // Number(1);
+        // parseFloat('1');
+        // parseInt('1');
+        // trString();
+        // isNaN(true);
+    </script>
+</body>
+
+</html>

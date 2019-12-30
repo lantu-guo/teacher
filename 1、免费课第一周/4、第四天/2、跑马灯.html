@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" style="background: red;"></div>
+    <script>
+        let box = document.getElementById('box'); // 获取的是一个元素对象
+        // let s = document.getElementById('aa'); // 通过id获取元素获取不到，那就结果是null；
+        // console.log(s)
+        box.onclick = function () {
+            // 每点击一次当前元素，函数里的代码就会重新执行一次
+            let color = box.style.background;
+            // if(color === 'red'){
+            //     box.style.background = 'green';
+            // }
+            // else {
+            //     box.style.background = 'red';
+            // }
+            switch (color) {
+                case 'red':
+                    box.style.background = 'green';
+                    break;
+                case 'green':
+                    box.style.background = 'yellow';
+                    break;
+                case 'yellow':
+                    box.style.background = 'orangered';
+                    break;
+                    // case 'orangered':
+                    //     box.style.background = 'red';
+                    //     break;
+                default:
+                    box.style.background = 'red';
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

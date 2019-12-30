@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        1、字符串：拿引号包起来的就是字符串
+        'Number(3)'   Number(3)
+        number,boolean直接加引号
+        null和undefined不能直接调用toString
+        引用数据类型转字符串：
+        普通对象： '[object Object]'
+        数组：把数组的每一项都去toString，把每一项的返回值和逗号拼接起来
+        四则运算
+        如果运算过程中出现了NaN，那最后的结果一定是NaN
+
+        加法可能会出现两种情况：
+        正常的运算：
+        字符串拼接：加号和引号一旦相遇，就是字符串拼接，不用进行数据类型转换，把值拼接到一起，外层那引号包起来
+        */
+       console.log('1' + {})
+       //       '1' + '[object Object]'  ->'1[object Object]'
+
+        // Boolean()
+    //    boolean: 0  ''  false  NaN  null  undefined  转布尔都是false，其余的都是true 
+
+    // !val:先转布尔在取反
+    // !! val:先转布尔在取反在取反
+    console.log(!4) // false
+    console.log(!!4) // true
+    </script>
+</body>
+</html>

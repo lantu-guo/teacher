@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        1、用单引号、双引号、反引号包裹起来的都是字符串
+        字符串也有legnth，字符串的每一项也有索引，跟数组的索引一样
+        2、字符串的方法都不会改变原字符串
+        3、字符串方法的返回值就是改变之后的值
+        4、不能通过length对字符串进行修改
+        */
+        //    let str = 'asd';
+        //    console.log(str.length);
+        //    console.log(str[0]);
+
+        
+        // 1、charAt():通过指定的索引获取对应的字符串,如果获取不要就是空字符串
+            // let str = 'asdqwe';
+            // console.log(str.charAt(100)) // ''如果获取不要就是空字符串
+            // console.log(str[100]) // 如果获取不到是undefined
+            // console.log(str.charAt(0)) // 'a'
+            // console.log(str[0]) // 'a' 
+        // 2、charCodeAt():通过指定的索引获取对应的字符串所对应的ASCII码
+            // let str = 'asdbh中';
+            // console.log(str.charCodeAt(0)) // 97
+
+        // 3、substr(n,m)：从索引n开始，截取m个，如果传递一个参数n，就是从索引n开始，截取到末尾
+            // let str = 'asdbh';
+            // console.log(str.substr()) // 克隆
+            // console.log(str.substr(0)) // 克隆
+            // console.log(str.substr(1,2)) // 'sd'
+
+        // 4、substring(n,m):从索引n开始，截取到索引m(不包括索引m对应的那一项)
+            // console.log(str.substring()) // 克隆
+            // console.log(str.substring(0)) // 克隆
+            // console.log(str.substring(1,2)) // 's'
+        // 5、slice(n,m):从索引n开始，截取到索引m(不包括索引m对应的那一项),但是slice支持负数
+
+        // 6、split：把字符串以特定的分割符转数组
+            // let str = 'as$dfgh$asd';
+            // console.log(str.split('$')); // ["as", "dfgh", "asd"]
+
+            // let str = 'asdasdasd'; // 把字符串里的a删除
+            // str = str.split('a').join('') // 'sdsdsd'
+            // console.log(str)
+
+        // 7、replace(n,m):把字符中的n被m替换
+            // 默认只能替换第一个
+            // 如果你想替换全部的，就得用正则replace(/n/g, m)
+            // let str = 'asdasd';
+            // // console.log(str.replace('a', 'x').replace('a','x')) // 'xsdxsd'
+            // console.log(str.replace(/a/g, 'x')) // 'xsdxsd'      global
+
+        // 8、toUpperCase():转大写
+        // 9、toLowerCase():转小写
+            // let str = 'assAdfEff中国';
+            // console.log(str.toUpperCase());
+            // console.log(str.toLowerCase());
+            // console.log(str.toUpperCase().toLowerCase()) // 'assadfeff中国'
+
+            // let str = 'erYa'; // 把字符串的开头字母转大写
+            // console.log(str.replace('e', 'E')) // 'ErYa'
+            // console.log(str.substring(0,1).toUpperCase()+str.substring(1))// 'ErYa'
+        // 10、trim:去空格
+        // 11、trimLeft：去左空格
+        // 12、trimRight：去右空格
+            // let str = '   w  e   ';
+            // console.log(1,str.trim(), 1)
+            // console.log(1,str.trimLeft(),1)
+            // console.log(1,str.trimRight(),1)
+        // 13、indexOf
+        // 14、lastIndexOf
+        // 15、includes
+        // 16、concat
+
+
+            // 需求：给字符串排序
+            // let str = '1244323456543222';
+            // console.log(str.split('').sort().join(''))
+
+        /* es6的方法实现数组去重
+             let ary = [1,2,3,1,2,3,1,2,3];
+             // let res = new Set(ary)
+             // let s = Array.from(res)
+             // console.log(s)
+             let res = Array.from(new Set(ary)); */
+    </script>
+</body>
+
+</html>

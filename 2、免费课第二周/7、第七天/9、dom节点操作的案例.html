@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body,html {
+            width: 100%;
+            height: 100%;
+        }
+        div {
+            width: 50%;
+            margin: 20px auto;
+            text-align: center;
+            color: white;
+        }
+        ul {
+            list-style: none;
+        }
+        ul li {
+            position: relative;
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            position: absolute;
+            right: 0;
+            height: 20px;
+            width: 30px;
+            font-size: 12px;
+            background: rgb(118, 194, 3);
+        }
+        input {
+            display: block;
+            width: 50%;
+            margin: 0 auto 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="input">
+        <ul id="box"></ul>
+    </div>
+
+    <script>
+        let box = document.getElementById('box');
+        let input = document.getElementById('input');
+
+        input.onblur = function () {
+            let value = input.value;
+            let li = document.createElement('li');
+            let btn = document.createElement('button');
+            btn.innerText = '删除';
+            let content = document.createTextNode(value);
+            li.appendChild(content); // 把文本节点插入到li的末尾
+            li.appendChild(btn); // 把button插入到li的末尾
+            box.appendChild(li); // 把li插入到box元素的末尾
+            input.value = ''; // 插入完成之后把input的内容置空
+
+            // 获取页面中的li，然后增加各行变色的功能
+            let lis = document.getElementsByTagName('li');
+            for (var i = 0; i < lis.length; i++) {
+                if (i % 2 === 0) {
+                    lis[i].style.background = 'orangered';
+                } else {
+                    lis[i].style.background = 'black';
+                }
+            }
+
+            btn.onclick = function () {
+                this.parentNode.parentNode.removeChild(this.parentNode);
+                // this就是当前点击的button，this.parentNode.parentNode就是ul，然后在ul里移除当前的li元素
+                // 移除之后再给剩下的li进行重新隔行变色
+                for (var i = 0; i < lis.length; i++) {
+                    if (i % 2 === 0) {
+                        lis[i].style.background = 'orangered';
+                    } else {
+                        lis[i].style.background = 'black';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

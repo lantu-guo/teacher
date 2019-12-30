@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>111</span>
+    </div>
+    <script>
+        /* 
+        1、document.createElement('div')
+        2、document.createTextNode('1111')
+        3、insertBefore()
+        4、appendChild
+        5、removeChild()
+        6、cloneNode(true/false):克隆节点 如果传参是true就是深克隆，如果传false或不传，就是浅克隆
+        7、replaceNode(n,m):替换节点
+
+        8、setAttribute(属性名，属性值)：给元素的结构上增加自定义属性
+        9、getAttribute(属性名)：获取结构是哪个的自定义属性
+        10、removeAttribute(属性名):移除元素结构上的属性
+        用set设置的值必须用get获取，用点的方式设置的值，必须用点的方式去获取；两种方法不能混着用
+        11、classList：
+        12、classList.add('aaa'); // 增加class名
+        13、classList.remove('box'); // 移除class名
+        14、classList.replace(n, m) // 替换class名(n被m替换)
+        */
+            let box = document.getElementsByClassName('box')[0];
+            // console.log(box)
+            // let clone1 = box.cloneNode(true);
+            // let clone2 = box.cloneNode(false)
+            // document.body.appendChild(clone1);
+            // document.body.appendChild(clone2);
+            // console.log(clone1)
+
+
+            // box.myIndex = 1; // 是把键值对增加到堆内存中了
+            // console.log(box.myIndex) // 用点的方式去获取
+
+            // box.setAttribute('flag', 333) // 给元素的结构上增加自定义属性
+            // console.log(box.getAttribute('flag'))
+            // box.removeAttribute('flag')
+            // console.log(box.flag)
+            // console.dir(box)
+
+            // box.className = 'aaa'
+            // box.className = ''
+            // box.classList.add('aaa');
+            // box.classList.add('bbb');
+            // box.classList.remove('box');
+            // box.classList.replace('aaa', 'xxx')
+
+
+
+        /* 
+        // 复习数组的方法
+        ary.length-- 
+        ary.length-=2
+        ary.splice(ary.length-1)
+        pop
+
+        shift
+        splice(0,1)
+
+        shift、pop、push、unshift、splice、reverse、sort
+        concat、slice、join、indexOf、lastIndexOf、includes、forEach、map
+        */
+    </script>
+</body>
+
+</html>

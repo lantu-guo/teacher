@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        #box {
+            width: 800px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin: 30px auto;
+            color: orangered;
+            font-size: 20px;
+            font-weight: 400;
+            background: -webkit-linear-gradient(top right, rgba(255, 0, 0, 0.281), rgba(0, 128, 0, 0.274), rgba(255, 255, 0, 0.178));
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">显示时间</div>
+    <script>
+        /* 
+        1、你的有一个结束的时间
+        2、得到当前时间和结束时间之间的时间差
+        3、把时间差转换为你想要的的格式展示在页面上
+        4、用定时器不断更新页面上的时间差
+        */
+        let box = document.getElementsByTagName('div')[0];
+        let timer = null;
+        // 不足10补零
+        let endTime = new Date('2019-12-27 11:15'); // 结束的时间
+        function addZero(value) {
+            return value < 10 ? '0' + value : value;
+        };
+        function setTime(){
+            let time = new Date();
+            let diffTime  = endTime - time; // 获取的时间差是一个毫秒差
+            if(diffTime<=0){
+                clearInterval(timer);
+                box.innerHTML = '时间到'
+                return; 
+            }
+            // let day = Math.floor(diffTime/1000/60/60/24)
+            let hours = Math.floor(diffTime/1000/60/60); // 获取小时
+            let min = Math.floor((diffTime - hours*60*60*1000)/1000/60); // 获取分
+            let sec = Math.floor((diffTime - hours*60*60*1000 - min*60*1000)/1000) // 获取秒
+
+            let res = addZero(hours)+ ':' +addZero(min) + ":" + addZero(sec);
+            box.innerHTML = res;
+        }
+
+       timer =  setInterval(setTime, 1000)
+
+    </script>
+</body>
+
+</html>

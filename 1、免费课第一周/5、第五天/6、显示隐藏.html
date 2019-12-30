@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            /* border: 1px solid red; */
+            margin: 20px auto;
+        }
+        span {
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            line-height: 40px;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span id="btn">隐藏</span>
+        <img id="content" src="http://www.17qq.com/img_biaoqing/82188215.jpeg" alt="">
+    </div>
+    <script>
+        let btn = document.getElementById('btn');
+        let content = document.getElementById('content');
+        btn.onclick = fn;
+
+        function fn(){
+            let btnVal = btn.innerText;
+            if(btnVal === '隐藏'){
+                btn.innerText = '显示';
+                content.style.display = 'none'
+            }
+            else {
+                btn.innerText = '隐藏';
+                content.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>

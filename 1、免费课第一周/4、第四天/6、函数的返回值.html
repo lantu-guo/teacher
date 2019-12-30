@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        函数的返回值：
+        return 
+        1、把函数的返回值return出去，
+        2、阻断代码向下运行(return下面的代码不在执行)
+        */
+        function fn(n, m) {
+            let total = n + m;
+            total = total / 2;
+            // 函数的返回值：谁执行的函数，当前返回值就给谁
+            // return的一定是一个值
+            // 如果函数没有返回值，那函数执行的结果就是undefined
+            // 如果只写return，后面不跟东西，那函数的执行结果还是undefined
+            // return total;
+        }
+
+        // console.log(fn(10,12)) 
+        // let ss = fn(10, 12);
+        // console.log(ss);
+        // console.log(total) // 报错，函数里边的东西，在函数外边是拿不到的
+
+
+        /* 
+        出现undefined的情况：
+        1、对象里获取属性名所对应的属性值获取不到，那就是unedfined
+        2、函数执行时，实参不给形参赋值，那结果就是undefined
+        3、函数没有return(返回值)，那函数执行结果就是undefined
+        4、创建一个变量，不给他赋值，那他的值就是undefined
+        */
+        // let num;
+        // console.log(num)
+        /* 
+        出现null的情况：
+        1、给变量手动赋值为null
+        2、通过id获取元素，获取不到，那结果也是null
+        */
+
+        // function f() {
+        //     // 阻断代码向下运行(return下面的代码不在执行)
+        //     console.log(11); // 11
+        //     return 22;  
+        //     console.log(33);
+        // }
+        // console.log(f()); // 22
+
+        // let w = '13'
+
+        // function fn(n, m) {
+        //     console.log(n, m)
+        //     let num = 10;
+        //     let w = 99;
+        //     console.log(w); // 99
+        //     return num
+
+
+        // }
+
+        // let s = fn(10, 12);
+        // console.log(s);
+        //虽然函数外边拿不到函数里边的变量，但是函数里边可以拿到函数外边的变量
+
+
+        // let num = 12; // 13 14
+        // function fn(){
+
+        //     num++;
+        //     return num++
+
+        // };
+        // let f = fn();
+        // console.log(f); // 13
+        // console.log(num); // 14
+
+
+        // let num = 12; 
+        // function fn(num){ // 10 11 12
+        
+        //     num++;
+        //     return num++;
+        //     --num;
+        // };
+        // let f = fn(10);
+        // console.log(f); // 11 
+        // console.log(num); // 12 
+    </script>
+</body>
+
+</html>

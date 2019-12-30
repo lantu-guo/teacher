@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        数据类型比较：
+        =
+        let a = 13
+        let b = 2
+
+        对象 == 对象：比较的是空间地址
+        对象 == 字符串：把左右两边都转字符串
+        '17' == '11';
+        剩下的左右两边转数字
+        null == undefined // true
+        null == null
+        undefined == undefined
+        其余的null和undefined跟谁都不相等
+        NaN == NaN：和谁都不相等(包括自己)
+        */
+
+        /* 
+        && 
+        if(1 && 2){
+            // 左右两边都成立，最后的结果才成立
+        }
+
+        || 
+        if(0 || 1){
+            // 只要有一个成立，那最后的结果就才成立
+        }
+        let a = 1 && 2 ||  3 && 4;
+
+        +=/-=
+
+        let num = 10;
+        num+=1; // num = num+1
+        i++/i--:先取值，后运算
+        ++i/--i：先运算后取值
+
+        %:取余数
+        0%2
+
+        if(1 && 2){
+            小括号里的值会转布尔，如果是true条件就成立，反之就不成立
+        }
+        // 如果if大括号里只有一行代码，大括号可以省略
+        if(1)console.log(11)
+
+        if(){
+
+        } else {
+
+        }
+
+        if(){
+
+        }else if(){
+
+        }else if(){
+
+        } else {
+
+        }
+
+        三元运算符：条件?条件成立做的事:条件不成立做的事(如果没有做的事 ，就用null代替)
+
+        switch case
+
+        switch(1){
+            case 1:
+                console.log(1);
+                break;
+            case 2:
+                console.log(2);
+                 break;
+            default:
+                console.log(3)
+        }
+
+        for(var i = 0; i<4;i++){
+            console.log(i) // 0 1 2 3
+        }
+        console.log(i)
+
+        for in
+
+        let obj = {
+            name:11,
+            age:2
+        }
+        for(var key in obj){
+            // 对象由多少键值对就会循环多少次
+            console.log(key) // key 是每一个键值对的属性名
+            console.log(obj[key])
+            console.log(obj.key)
+        }
+
+
+        while(2>1){
+             // 阻塞线程
+        }
+        console.log(1)
+        */
+
+        let ary = ['erYa', '珠峰', '培训', true, false];
+        for (var i = 0; i < ary.length; i++) {
+            console.log(ary[i]); // 'erYa'
+            break;
+        }
+        console.log(i); // 0
+    </script>
+</body>
+
+</html>
